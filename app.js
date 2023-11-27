@@ -1,16 +1,15 @@
 const express = require("express");
 const app = express();
+const mainRoutes = require("./src/routes/mainRoutes");
+const shopRoutes = require("./src/routes/shopRoutes");
+const adminRoutes = require("./src/routes/adminRoutes");
+const authRoutes = require("./src/routes/authRoutes");
 
 app.use(express.static("public"));
 
-app.get("/home", (req, res) => res.sendFile(__dirname + "/public/index.html"));
-app.get("/contact", (req, res) =>
-  res.sendFile(__dirname + "/public/views/shop/contact.html")
-);
-app.get("/about", (req, res) =>
-  res.sendFile(__dirname + "/public/views/shop/contact.html")
-);
-app.get("/faqs", (req, res) =>
-  res.sendFile(__dirname + "/public/views/shop/contact.html")
-);
+app.use("/", mainRoutes);
+app.use("/shop", shopRoutes);
+app.use("/admin", adminRoutes);
+app.use("/auth", authRoutes);
+
 app.listen(4001, () => console.log("lalalalla"));
