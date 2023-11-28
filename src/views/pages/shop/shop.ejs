@@ -14,7 +14,7 @@
   <%- include('../../partials/header'); %>
 
   <main>
-    <!--Inicio Aside-->
+
     <aside>
       <div class="buscar-wrapper">
         <div class="buscar-title">BUSCAR</div>
@@ -70,13 +70,12 @@
         </div>
       </div>
     </aside>
-    <!--Fin Aside-->
 
-    <!--Inicio Seccion Principal-->
     <div class="container-wrapper">
     <div class="principal-wrapper">
       <div class="principal-sub-wrapper">
-
+        <% products.forEach(product => {  %>
+  
         <div class="card">
           <div class="card-title">
             <div class="card-item_tag">Nuevo</div>
@@ -84,20 +83,23 @@
 
           <div class="card-item_link">
             <picture class="card-item_cover">
-              <img src="../../assets/img/star-wars/trooper-1.webp" alt="Funko Stormtrooper" />
+              <img src="../../assets/img/star-wars/trooper-1.webp" alt="" />
             </picture>
           </div>
           <div class="card-item_content">
-            <div class="card-item_licence">STAR WARS</div>
-            <div class="card-item_name">STORMTROOMPER LIGHTSABER</div>
-            <div class="card-item_price">$ 1799,9</div>
+            <div class="card-item_licence"><%= product.licence_name %></div>
+            <div class="card-item_name"><%= product.product_name %></div>
+            <div class="card-item_price">$ <%= product.product_price %></div>
             <div class="card-payment">
               <div class="card-item_promo">3 CUOTAS SIN INTER&Eacute;S</div>
             </div>
           </div>
           </div>
+          <% }) %>
 
-          <div class="card">
+
+
+          <!-- <div class="card">
             <div class="card-title">
               <div class="card-item_tag">Nuevo</div>
             </div>
@@ -261,15 +263,14 @@
                     </div>
         
 
+ -->
 
-
-                <!--Loops otras cards! ...-->
 
           </div>
           </div>
         </div>
      </div>
-        <!--Fin Seccion Principal-->
+ 
   </main>
   <div class="pagination-wrapper">
     <div class="pagination">

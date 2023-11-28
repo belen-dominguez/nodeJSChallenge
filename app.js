@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const PORT = 4001;
 
 app.set("views", "src/views");
 app.set("view engine", "ejs");
@@ -16,4 +17,4 @@ app.use("/shop", shopRoutes);
 app.use("/admin", adminRoutes);
 app.use("/auth", authRoutes);
 
-app.listen(4001, () => console.log("working"));
+app.listen(PORT, () => console.log("working"));
